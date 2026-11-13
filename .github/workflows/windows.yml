@@ -31,3 +31,4 @@ jobs:
           Get-CimInstance Win32_VideoController | Select-Object Name, AdapterRAM, DriverVersion
           Write-Host "===== DISPLAY DEVICES ====="
           Get-PnpDevice -Class Display | Format-List FriendlyName, Status
+Get-WindowsFeature Server-Gui-Shell, Server-Gui-Mgmt-Infra
