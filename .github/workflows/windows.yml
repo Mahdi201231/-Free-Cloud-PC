@@ -27,3 +27,5 @@ jobs:
             "Free: {0:N2} GB" -f ($_.FreeSpace / 1GB)
           }
           
+          Write-Host "===== GPU ====="
+          Get-CimInstance Win32_VideoController | Select-Object Name, AdapterRAM, DriverVersion
