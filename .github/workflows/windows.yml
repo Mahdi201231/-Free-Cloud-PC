@@ -29,3 +29,5 @@ jobs:
           
           Write-Host "===== GPU ====="
           Get-CimInstance Win32_VideoController | Select-Object Name, AdapterRAM, DriverVersion
+          Write-Host "===== DISPLAY DEVICES ====="
+          Get-PnpDevice -Class Display | Format-List FriendlyName, Status
