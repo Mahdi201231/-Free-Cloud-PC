@@ -1,0 +1,22 @@
+
+name: Windows Cloud Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  windows-test:
+    runs-on: windows-latest
+    steps:
+      - name: Check Windows
+        shell: pwsh
+        run: |
+          Write-Host "Windows Cloud PC Test"
+          Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion
+          Write-Host "CPU:"
+          Get-CimInstance Win32_Processor | Select-Object Name
+          Write-Host "RAM:"
+          Get-CimInstance Win32_ComputerSystem | Select-Object TotalPhysicalMemory
+          Write-Host "Disk:"
+          Get-PSDrive C
+          
